@@ -1,0 +1,39 @@
+(defpoll battery 
+    :interval "15s"
+    :initial 0
+    "./scripts/battery --bat")
+(defpoll battery_status 
+    :interval "1m"
+    :initial "Full"
+    "./scripts/battery --bat-st")
+(defpoll memory 
+    :interval "15s"
+    :initial 0
+    "scripts/memory")
+(defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
+(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
+(defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
+
+(defwidget bat []
+      (circular-progress :value battery
+          :class "bat circBar"
+          :thickness 4
+       (button 
+           :tooltip "battery on ${battery}%"
+           :onclick "./scripts/pop system"
+             (label :wrap false
+                    :limit-width 2
+                    :show-truncated false
+                      :text " "))))
+
+(defwidget mem []
+      (circular-progress :value memory
+          :class "mem circBar"
+          :thickness 4
+       (button 
+           :tooltip "using ${memory}% ram"
+           :onclick "$EWW_CONFIG_DIR/scripts/pop system"
+            (label :limit-width 2
+                    :show-truncated false
+                    :wrap false
+                    :text "󰍛"))))

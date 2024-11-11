@@ -45,26 +45,39 @@ tooltip label {
 
 /** Widgets **/
 
-.clock_time_class,
-.clock_minute_class,
-.clock_time_sep,
-.clock_date_class {
+.clock_date {
 	font-size: 1.5rem;
 	color: $fontColor;
 	font-weight: bold;
 }
 
-
-.membar {
-	color: #e0b089;
+.circBar {
+	margin: 0px 5px;
 	background-color: #38384d;
-	border-radius: 10px;
+	border-radius: 0.8rem;
+
+	button {
+		background: red;
+		margin: 0.6rem;
+	}
 }
 
-.batbar {
+.mem {
+	color: #e0b089;
+
+	label {
+		font-size: 2rem;
+		color: #e0b089;
+	}
+}
+
+.bat {
 	color: #afbea2;
-	background-color: #38384d;
-	border-radius: 10px;
+
+	label {
+		font-size: 1.2rem;
+		color: #afbea2;
+	}
 }
 
 .brightbar trough highlight {
@@ -99,22 +112,6 @@ tooltip label {
 	color: #a1bdce;
 }
 
-.iconmem,
-.iconbat {
-	background: $bgColor;
-	margin: 0.8rem;
-}
-
-.iconbat label {
-	color: #afbea2;
-	font-size: 1rem;
-}
-
-.iconmem label {
-	color: #e0b089;
-	font-size: 2rem;
-}
-
 .bright_icon {
 	font-size: 1.5rem;
 	color: #e4c9af;
@@ -128,15 +125,7 @@ tooltip label {
 	font-size: 1.5rem;
 }
 
-.mem_module {
-	background-color: #0f0f17;
-	margin: 0px 10px 0px 3px;
-}
 
-.bat_module {
-	background-color: #0f0f17;
-	margin: 0px 10px 0px 10px;
-}
 
 
 scale trough {
