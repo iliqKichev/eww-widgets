@@ -1,12 +1,19 @@
 ;; Variables
-(defpoll brightness_percent :interval "5s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
-(defpoll battery :interval "15s" "./scripts/battery --bat")
-(defpoll battery_status :interval "1m" "./scripts/battery --bat-st")
-(defpoll memory :interval "15s" "scripts/memory")
+(defpoll battery 
+    :interval "15s"
+    :initial 0
+    "./scripts/battery --bat")
+(defpoll battery_status 
+    :interval "1m"
+    :initial "Full"
+    "./scripts/battery --bat-st")
+(defpoll memory 
+    :interval "15s"
+    :initial 0
+    "scripts/memory")
 (defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
 (defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
 (defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-(defvar br_reveal false)
 (deflisten workspace "scripts/workspace")
 
 ;; (defvar eww "$HOME/.local/bin/eww/eww -c $EWW_CONFIG_DIR")
@@ -18,6 +25,7 @@
 (include "wifi.yuck")
 (include "song.yuck")
 (include "clock.yuck")
+(include "bright.yuck")
 
 (defwidget workspaces []
   (literal :content workspace))
@@ -30,12 +38,12 @@
           :thickness 4
        (button 
            :class "iconbat"
-           :limit-width 2
            :tooltip "battery on ${battery}%"
-           :show_truncated false
            :onclick "./scripts/pop system"
-           :wrap false
-           " "))))
+             (label :wrap false
+                    :limit-width 2
+                    :show-truncated false
+                      :text " ")))))
 
 
 (defwidget mem []
@@ -45,12 +53,12 @@
           :thickness 4
        (button 
            :class "iconmem"
-           :limit-width 2
            :tooltip "using ${memory}% ram"
            :onclick "$EWW_CONFIG_DIR/scripts/pop system"
-           :show_truncated false
-           :wrap false
-           "󰍛"))))
+            (label :limit-width 2
+                    :show-truncated false
+                    :wrap false
+                    :text "󰍛")))))
 
 
 
@@ -59,22 +67,6 @@
     (label :class "separ" :text "|")))
 
         
-(defwidget bright []
-  (eventbox :onhover "${EWW_CMD} update br_reveal=true" 
-            :onhoverlost "${EWW_CMD} update br_reveal=false"
-   (box :class "module-2" :space-evenly "false" :orientation "h" :spacing "3" 
-     (label :text "" :class "bright_icon" :tooltip "brightness")
-    (revealer :transition "slideleft"
-       :reveal br_reveal
-       :duration "350ms"
-     (scale    :class "brightbar"
-        :value brightness_percent
-        :orientation "h"
-        :tooltip "${brightness_percent}%"
-        :max 100
-        :min 0
-        :onchange "brightnessctl set {}%")))))
-
 
 (defwidget left []
   (box :orientation "h" 

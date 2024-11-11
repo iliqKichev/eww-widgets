@@ -13,15 +13,21 @@ $bgColor: #0f0f17;
 }
 
 /** General **/
+.bar {
+	background: none;
+}
+
 .bar_class {
-	background: $bgColor;
+	background: none;
 	border-radius: 16px;
 }
 
+/**
 .module {
 	margin: 0px 0px 0px 0px;
 	border-radius: 10px 16px 0px 10px;
 }
+**/
 
 /** tooltip!! **/
 /**
@@ -39,31 +45,13 @@ tooltip label {
 
 /** Widgets **/
 
-.clock_time_sep {
-	font-size: 1rem;
-	color: $fontColor;
-	margin: 0px 4px 1px 4px;
-}
-
 .clock_time_class,
-.clock_minute_class {
+.clock_minute_class,
+.clock_time_sep,
+.clock_date_class {
 	font-size: 1.5rem;
 	color: $fontColor;
 	font-weight: bold;
-}
-
-.clock_date_class {
-	font-size: 18;
-	margin: 0px 20px 0px -1px;
-	color: #d7beda;
-}
-
-.clock_minute_class {
-	margin: 0px 20px 0px 3px;
-}
-
-.clock_time_class {
-	margin: 0px 5px 0px 0px;
 }
 
 
@@ -90,21 +78,20 @@ tooltip label {
 }
 
 .volume_icon label {
-	font-size: 22;
+	font-size: 1.5rem;
 	color: #a1bdce;
 	margin: 0px 10px 0px 10px;
 }
 
 
 .module_essid {
-	font-size: 18;
+	font-size: 1rem;
 	color: #a1bdce;
 	margin: 0px 10px 0px 0px;
 }
 
 .module-wifi {
 	background: $bgColor;
-	margin: 0px 10px 0px 5px;
 }
 
 .module-wifi label {
@@ -138,8 +125,7 @@ tooltip label {
 .separ {
 	color: #3e424f;
 	font-weight: bold;
-	font-size: 22px;
-	margin: 0px 8px 0px 8px;
+	font-size: 1.5rem;
 }
 
 .mem_module {
@@ -301,35 +287,29 @@ calendar:indeterminate {
 	color: #bfc9db;
 }
 
-
-
-
-
-
-
 .sys_sep {
 	color: #38384d;
-	font-size: 18;
+	font-size: 1rem;
 	margin: 0px 10px 0px 10px;
 }
 
 .sys_text_bat_sub,
 .sys_text_mem_sub {
-	font-size: 16;
+	font-size: 1rem;
 	color: #bbc5d7;
 	margin: 5px 0px 0px 25px;
 }
 
 .sys_text_bat,
 .sys_text_mem {
-	font-size: 21;
+	font-size: 1.5rem;
 	font-weight: bold;
 	margin: 14px 0px 0px 25px;
 }
 
 .sys_icon_bat,
 .sys_icon_mem {
-	font-size: 30;
+	font-size: 2rem;
 	margin: 30px;
 }
 
@@ -453,20 +433,14 @@ calendar:indeterminate {
 }
 
 .speaker_icon {
-	background-size: cover;
-	background-image: url('images/speaker.png');
-	background-position: center;
-	min-height: 70px;
-	min-width: 75px;
-	margin: 10px 20px 5px 20px;
-	border-radius: 12px;
+	background: none;
+	//	margin: 10px 20px 5px 20px;
 }
 
-.speaker_text {
-	color: #a1bdce;
-	font-size: 26px;
-	font-weight: bold;
-	margin: 20px 0px 0px 0px;
+.speaker_icon label {
+	font-family: JetBrainsMono NF;
+	color: #3c98d1;
+	font-size: 1.2rem;
 }
 
 .speaker_bar scale trough highlight {
@@ -523,6 +497,6 @@ calendar:indeterminate {
 
 .audio_sep {
 	color: #38384d;
-	font-size: 18;
+	font-size: 1rem;
 	margin: 0px 0px 0px 0px;
 }
