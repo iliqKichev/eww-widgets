@@ -45,12 +45,16 @@ tooltip label {
 
 /** Widgets **/
 
-.clock_date {
+.clock_format {
 	font-size: 1.5rem;
 	color: $fontColor;
 	font-weight: bold;
 }
 
+.date_format {
+	font-size: 1.25rem;
+	color: $fontColor;
+}
 .circBar {
 	margin: 0px 5px;
 	background-color: #38384d;
