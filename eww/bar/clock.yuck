@@ -1,4 +1,4 @@
-(defpoll clock_time :interval "5m" "date +\%_H")
+(defpoll clock_time :interval "30s" "date +\%H")
 (defpoll clock_minute :interval "5s" "date +\%M")
 (defpoll clock_date :interval "10h" "date '+%a, %e %b %Y'")
 
