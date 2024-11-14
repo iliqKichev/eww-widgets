@@ -27,6 +27,7 @@
 (include "clock.yuck")
 (include "bright.yuck")
 (include "system.yuck")
+(include "powermenu.yuck")
 
 (defwidget workspaces []
   (literal :content workspace))
@@ -85,12 +86,12 @@
 
 
 (defwidget right []
-  (box :orientation "h" 
-   :space-evenly false  
-      :halign "start"
-   :class "right_modules"
-   (workspaces)))
-
+ (box :orientation "h" 
+  :space-evenly false  
+     :halign "start"
+  :class "right_modules"
+  (powerbutton)))
+  
 
 (defwidget center []
   (box :orientation "h" 

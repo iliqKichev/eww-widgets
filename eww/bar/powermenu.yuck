@@ -1,0 +1,46 @@
+(defwidget powerbutton []
+  (eventbox :cursor "hand"
+    (button
+      :class "btn powerbtn"
+      :onclick "${EWW_CMD} open powermenu --toggle &"
+      (label 
+        :text "󰐥"
+        :xalign 0.45))))
+
+(defwidget powermenucontent []
+  (box
+    :orientation "h"
+    :class "powermenu-box"
+      (button 
+        :class "btn shutdown"
+        :tooltip "Shutdown"
+        :onclick "${EWW_CMD} close powermenu && shutdown now"
+        (label 
+          :text "" 
+          :xalign 0.45))
+
+      (button :class "btn reboot"
+        :tooltip "Reboot"
+        :onclick "${EWW_CMD} close powermenu && reboot"
+        (label 
+          :text ""
+          :xalign 0.45))
+
+
+      (button :class "btn logout"
+        :tooltip "Logout"
+        :onclick "${EWW_CMD} close powermenu && hyprctl dispatch exit"
+        (label 
+          :text "󰍃"
+          :xalign 0.5))))
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "0%"
+             :y "0%"
+             :width "30%"
+             :height "15%"
+             :anchor "center center")
+  :wm-ignore true
+  (powermenucontent))
+
