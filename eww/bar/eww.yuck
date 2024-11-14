@@ -29,40 +29,8 @@
 (include "system.yuck")
 (include "powermenu.yuck")
 
-(defwidget workspaces []
-  (literal :content workspace))
-
-
-(defwidget bat []
-    (box :class "bat_module" :vexpand "false" :hexpand "false" 
-      (circular-progress :value battery
-          :class "batbar"
-          :thickness 4
-       (button 
-           :class "iconbat"
-           :tooltip "battery on ${battery}%"
-           :onclick "./scripts/pop system"
-             (label :wrap false
-                    :limit-width 2
-                    :show-truncated false
-                      :text " ")))))
-
-
-(defwidget mem []
-    (box :class "mem_module" :vexpand "false" :hexpand "false" 
-      (circular-progress :value memory
-          :class "membar"
-          :thickness 4
-       (button 
-           :class "iconmem"
-           :tooltip "using ${memory}% ram"
-           :onclick "$EWW_CONFIG_DIR/scripts/pop system"
-            (label :limit-width 2
-                    :show-truncated false
-                    :wrap false
-                    :text "󰍛")))))
-
-
+;; (defwidget workspaces []
+;;  (literal :content workspace))
 
 (defwidget sep []
   (box :class "module-2" :vexpand "false" :hexpand "false"
