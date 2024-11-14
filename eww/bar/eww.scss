@@ -6,9 +6,23 @@ Edited by iliqKichev
 $fontColor: #bfc9db;
 $bgColor: #0f0f17;
 
+$base: #44465c;
+$blue: #3fc6de;
+$surface0: #44465c;
+$surface1: #44465c;
+$text: #d9e0ee;
+$overlay0: #6e738d;
+$red: #ec6a88;
+$peach: #efb993;
+$yellow: #efb993;
+$mauve: #b072d1;
+$green: #3fdaa4;
+$mantle: #292a37;
+$crust: #2e303e;
+$light-gray: #9699b7;
+
 * {
 	all: unset;
-	font-family: feather;
 	font-family: DaddyTimeMono NF;
 	background: none;
 }
@@ -37,6 +51,7 @@ bar {
 	}
 }
 
+
 /**
 .module {
 	margin: 0px 0px 0px 0px;
@@ -62,84 +77,84 @@ tooltip label {
 
 .clock_format {
 	font-size: 1.5rem;
-	color: $fontColor;
+	color: $text;
 	font-weight: bold;
 }
 
 .date_format {
 	font-size: 1.25rem;
-	color: $fontColor;
+	color: $text;
 }
+
 .circBar {
 	margin: 0px 5px;
 	background-color: #38384d;
 	border-radius: 0.8rem;
 
 	button {
-		background: red;
 		margin: 0.6rem;
 	}
 }
 
 .mem {
-	color: #e0b089;
+	color: $yellow;
 
 	label {
 		font-size: 2rem;
-		color: #e0b089;
+		color: $yellow;
 	}
 }
 
 .bat {
-	color: #afbea2;
+	color: $green;
 
 	label {
 		font-size: 1.2rem;
-		color: #afbea2;
+		color: $green;
 	}
 }
 
-.brightbar trough highlight {
-	background-image: linear-gradient(to right, #e4c9af 30%, #f2cdcd 50%, #e0b089 100% *50);
-	border-radius: 10px;
-}
+// .brightbar trough highlight {
+// 	background-image: linear-gradient(to right, #e4c9af 30%, #f2cdcd 50%, #e0b089 100% *50);
+//	border-radius: 10px;
+//}
 
-.volbar trough highlight {
-	background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
-	border-radius: 10px;
-}
+// .volbar trough highlight {
+// 	background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
+// 	border-radius: 10px;
+// }
 
 .volume_icon label {
 	font-size: 1.5rem;
-	color: #a1bdce;
+	color: $blue;
 	margin: 0px 10px 0px 10px;
 }
 
 
-.module_essid {
-	font-size: 1rem;
-	color: #a1bdce;
-	margin: 0px 10px 0px 0px;
+.module_essid label {
+	font-size: 1.4rem;
+	color: $text;
+	margin: 0px 10rem;
 }
 
 .module-wifi {
-	background: $bgColor;
+	background: none;
 }
 
 .module-wifi label {
 	font-size: 1.5rem;
-	color: #a1bdce;
+	color: $mauve;
 }
 
 .bright_icon {
 	font-size: 1.5rem;
-	color: #e4c9af;
+	color: $peach;
 	margin: 0px 10px 0px 10px;
 }
 
 
 .separ {
-	color: #3e424f;
+	color: $base;
 	font-weight: bold;
 	font-size: 1.5rem;
 }
@@ -149,8 +164,8 @@ tooltip label {
 
 scale trough {
 	all: unset;
-	background-color: #22242b;
-	box-shadow: 0 2px 3px 2px #06060b;
+	background-color: $blue;
+	// box-shadow: 0 2px 3px 2px #06060b;
 	border-radius: 16px;
 	min-height: 10px;
 	min-width: 70px;
