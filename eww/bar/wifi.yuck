@@ -1,12 +1,12 @@
 (defvar wifi_rev false)
 
 (defpoll WLAN_STATUS 
-  :interval "1m" 
-  :initial "" 
-  "[[ $(nmcli g | grep -oE 'disconnected') == \"\" ]] && echo 1 || echo 0")
+  :interval "1s" 
+  :initial "1" 
+  "[[ $(nmcli g | grep -oE 'disconnected') == \"\" ]] && echo 0 || echo 1")
 
 (defpoll WLAN_ESSID 
-  :interval "1m"
+  :interval "30s"
   :initial ""
   "nmcli c | grep wlan0 | awk '{print $1}'")
 
@@ -19,11 +19,12 @@
      (button :class "module-wifi" 
              :onclick "networkmanager_dmenu" 
             (label :wrap "false" 
-                   :limit-width 12 
-                   :text {WLAN_STATUS == "1" ? "󰖪 ":"󰖩 "}))
+                   :limit-width 3
+                   :justify "center"
+                   :text {WLAN_STATUS == 1 ? "󰖩":"󰖪"}))
              
      (revealer :transition "slideright"
-        :reveal wifi_rev
+        :reveal {wifi_rev && (WLAN_STATUS == 1)}
         :duration "350ms"
       (label :class "module_essid"
              :text "${WLAN_ESSID}")))))
