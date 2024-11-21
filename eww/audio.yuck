@@ -17,17 +17,16 @@
         :style "background: none;"
    (box :space-evenly "false"
         :orientation "h" 
-        :spacing "3"
-        :class "speaker_icon" 
-    (button   :onclick "./scripts/pop audio"   
-        (label :text " "
+    (button :onclick "${EWW_CMD} open audio_ctl --toggle" 
+            :class "speaker btn" 
+        (label :text ""
                :wrap false
                :limit-width 2
                :tooltip "audio"))
     (revealer :transition "slideleft"
        :reveal vol_reveal
        :duration "350ms"
-     (scale    :class "volbar"
+     (scale    :class "scalebar"
         :value volume_percent
         :orientation "h"
         :tooltip "${volume_percent}%"
@@ -38,7 +37,7 @@
 (defwidget audio []
   (box :class "audio-box" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
    (box :halign "v" :space-evenly "false" :hexpand "false" :vexpand "false"
-    (box :class "speaker_icon" :orientation "v")
+    (box :class "speaker" :orientation "v")
     (box :orientation "v" :halign "center" :vexpand "false" :hexpand "false"
      (label :class "speaker_text" :text "speaker" :valign "center" :halign "left")
      (box :class "speaker_bar" :halign "center" :vexpand "false" :hexpand "false"
