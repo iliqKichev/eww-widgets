@@ -25,6 +25,7 @@
    (sep)
    (bat)
    (mem)
+   (cpu)
    (sep)
    (clock_module)))
 
@@ -59,10 +60,10 @@
                        :width "98%"
                        :height "30px"
                        :anchor "top center")
-          :stacking "fg"
+          :stacking "overlay"
           :exclusive true
           :monitor 0
-          :windowtype "dock"
+          :namespace "toolbar"
   (bar_1))
 
 
