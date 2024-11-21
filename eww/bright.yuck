@@ -10,7 +10,7 @@
             :onhoverlost "${EWW_CMD} update br_reveal=false"
    (box :space-evenly "false" :spacing "3" 
      (label :text "" 
-            :class "bright_icon" 
+            :class "bright btn" 
             :tooltip "brightness")
     (revealer :transition "slideleft"
        :reveal br_reveal

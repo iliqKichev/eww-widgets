@@ -3,9 +3,6 @@ Created by saimoom
 Edited by iliqKichev
 **/
 
-$fontColor: #bfc9db;
-$bgColor: #0f0f17;
-
 $base: #44465c;
 $blue: #3fc6de;
 $surface0: #44465c;
@@ -21,29 +18,26 @@ $mantle: #292a37;
 $crust: #2e303e;
 $light-gray: #9699b7;
 
-* {
-	all: unset;
-	font-family: DaddyTimeMono NF;
-	background: none;
-}
-
 /** General **/
 
-bar {
-	background: none;
+* {
+	all: unset;
 }
 
 .btn {
-	background: none;
-	margin: 0.2rem 0.3rem;
+	margin: 0.2rem 0.6rem;
 
 	label {
-		font-family: JetBrainsMono NF;
+		font-family: JetBrainsMono Nerd Font;
 	}
 }
 
+.selectable:hover {
+	background: red;
+}
+
 .powerbtn {
-	margin-left: 1.2rem;
+	margin: 0rem 1.2rem;
 
 	label {
 		font-size: 2rem;
@@ -51,48 +45,35 @@ bar {
 	}
 }
 
-
-/**
-.module {
-	margin: 0px 0px 0px 0px;
-	border-radius: 10px 16px 0px 10px;
-}
-**/
-
-/** tooltip!! **/
-/**
-tooltip.background {
-	background-color: $bg_color;
-	font-size: 15px;
-	border-radius: 10px;
-	color: $font_color;
+.wifi {
+	label {
+		font-size: 1.5rem;
+		color: $mauve;
+	}
 }
 
-tooltip label {
-	margin: 6px;
-}
-**/
-
-/** Widgets **/
-
-.clock_format {
+.clock {
 	font-size: 1.5rem;
-	color: $text;
 	font-weight: bold;
+	margin: 0rem 0.5rem
 }
 
-.date_format {
-	font-size: 1.25rem;
-	color: $text;
+.date {
+	font-size: 1rem;
+	margin: 0rem 0.5rem;
 }
 
 .circBar {
-	margin: 0px 5px;
 	background-color: #38384d;
 	border-radius: 0.8rem;
+	margin: 0rem 0.3rem;
 
 	button {
-		margin: 0.6rem;
+		padding: 0.7rem;
+	}
+
+	label {
+		font-size: 1.5rem;
 	}
 }
 
@@ -100,7 +81,8 @@ tooltip label {
 	color: $yellow;
 
 	label {
-		font-size: 2rem;
+
+		padding: 0.3rem;
 		color: $yellow;
 	}
 }
@@ -109,44 +91,41 @@ tooltip label {
 	color: $green;
 
 	label {
-		font-size: 1.2rem;
+		padding-left: 0.15rem;
 		color: $green;
 	}
 }
 
-// .brightbar trough highlight {
-// 	background-image: linear-gradient(to right, #e4c9af 30%, #f2cdcd 50%, #e0b089 100% *50);
-//	border-radius: 10px;
-//}
+.cpu {
+	color: $red;
 
-// .volbar trough highlight {
-// 	background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
-// 	border-radius: 10px;
-// }
-
-.volume_icon label {
-	font-size: 1.5rem;
-	color: $blue;
-	margin: 0px 10px 0px 10px;
+	label {
+		padding-right: 0.5rem;
+		color: $red;
+	}
 }
 
 
-.module_essid label {
-	font-size: 1.4rem;
-	color: $text;
-	margin: 0px 10rem;
+.essid {
+	margin: 0px 0.5rem;
+
+	label {
+		font-family: DaddyType Nerd Font;
+		font-size: 1.4rem;
+	}
 }
 
-.module-wifi {
-	background: none;
+.speaker {
+
+	label {
+		padding: 0 1rem 0 0;
+		font-size: 1.5rem;
+		color: $blue;
+	}
 }
 
-.module-wifi label {
-	font-size: 1.5rem;
-	color: $mauve;
-}
 
-.bright_icon {
+.bright {
 	font-size: 1.5rem;
 	color: $peach;
 	margin: 0px 10px 0px 10px;
@@ -157,9 +136,8 @@ tooltip label {
 	color: $base;
 	font-weight: bold;
 	font-size: 1.5rem;
+	margin: 0rem 0.3rem
 }
-
-
 
 
 scale trough {
