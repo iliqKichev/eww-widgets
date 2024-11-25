@@ -55,36 +55,24 @@
 
 
 (defwindow bar
-          :geometry (geometry :x "0%"
-                       :y "9px"
-                       :width "98%"
-                       :height "30px"
-                       :anchor "top center")
-          :stacking "overlay"
-          :exclusive true
-          :monitor 0
-          :namespace "toolbar"
+  :geometry (geometry :x "0%"
+             :y "0.5%"
+             :width "98%"
+             :height "4%"
+             :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :monitor 0
+  :namespace "toolbar"
   (bar_1))
 
 
-(defwindow calendar
-  :geometry (geometry :x "-20px" 
-             :y "7%" 
-                     :anchor "top right"
-             :width "270px" 
-             :height "60px")
-  :stacking "fg"
-  :exclusive false
-  :monitor 0
- (cal))
-
-
 (defwindow audio_ctl
-  :geometry (geometry :x "-20px" 
-             :y "7%" 
-                     :anchor "top right"
-             :width "280px" 
-             :height "60px")
+  :geometry (geometry :x "-20px") 
+            :y "7%" 
+            :anchor "top right"
+            :width "280px" 
+            :height "60px"
   :stacking "fg"
   :exclusive false
   :monitor 0

@@ -1,115 +1,31 @@
-(defpoll battery 
-    :interval "15s"
-    :initial 0
-    "./scripts/battery --bat")
-(defpoll battery_status 
-    :interval "1m"
-    :initial "Full"
-    "./scripts/battery --bat-st")
-(defpoll memory 
-    :interval "15s"
-    :initial 0
-    "scripts/memory")
-(defpoll memory_used_mb :interval "2m" "scripts/mem-ad used")
-(defpoll memory_total_mb :interval "2m" "scripts/mem-ad total")
-(defpoll memory_free_mb :interval "2m" "scripts/mem-ad free")
-
 (defwidget bat []
-      (circular-progress :value "${EWW_BATTERY["BAT0"].capacity}"
-          :class "bat circBar"
-          :thickness 4
-       (button 
-           :tooltip "${EWW_BATTERY["BAT0"].status} battery on ${EWW_BATTERY["BAT0"].capacity}%"
-           :onclick "./scripts/pop system"
-            :class "btn"
-             (label :wrap false
-                    :limit-width 2
-                    :show-truncated false
-                      :text {EWW_BATTERY["BAT0"].status != "Charging" ? " ":""}))))
+  (circular-progress :value "${EWW_BATTERY["BAT0"].capacity}"
+    :class "bat circBar"
+    :thickness 4
+    :width 50
+    :height 50
+     (label :limit-width 2
+            :tooltip "${EWW_BATTERY["BAT0"].status} battery on ${EWW_BATTERY["BAT0"].capacity}%"
+            :text {EWW_BATTERY["BAT0"].status != "Charging" ? " ":""})))
 
 (defwidget mem []
-      (circular-progress :value "${EWW_RAM.used_mem_perc}"
-          :class "mem circBar"
-          :thickness 4
-       (button 
+  (circular-progress :value "${EWW_RAM.used_mem_perc}"
+    :class "mem circBar"
+    :thickness 4
+    :width 50
+    :height 50
+    (label :limit-width 2
            :tooltip "Using ${round(EWW_RAM.used_mem_perc, 1)}% RAM"
-           :onclick "./scripts/pop system"
-            :class "btn"
-            (label :limit-width 2
-                    :show-truncated false
-                    :wrap false
-                    :text ""))))
+           :text "")))
 
 (defwidget cpu []
- (circular-progress :value "${EWW_CPU.avg}"
-   :class "cpu circBar"
-   :thickness 4 
-    (button
-        :class "btn"
-        :tooltip "using ${EWW_CPU.avg}% of the CPU)"
-        :onclick "./scripts/pop system"
-        (label :limit-width 2
-               :text ""))))
-
-
-(defwidget system []
-  (box :class "sys_win" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 0
-   (box :class "sys_bat_box" :orientation "h" :space-evenly "false"
-       (circular-progress :value battery
-                 :class "sys_bat"
-                 :thickness 9
-             (label :text ""
-                 :class "sys_icon_bat"
-                 :limit-width 2
-                 :show_truncated false
-                 :wrap false))
-       (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
-        (label :text "battery"
-            :halign "start"
-            :class "sys_text_bat"
-            :limit-width 9
-            :show_truncated false
-            :wrap false)
-        (label :text "${battery}%"
-            :halign "start"
-            :class "sys_text_bat_sub"
-            :limit-width 22
-            :show_truncated false
-            :wrap false)
-        (label :text "${battery_status}"
-            :halign "start"
-            :class "sys_text_bat_sub"
-            :limit-width 22
-            :show_truncated false
-            :wrap false)))
-   (label :text "" :class "sys_sep" :halign "center")
-   (box :class "sys_mem_box" :orientation "h" :space-evenly "false" :halign "start"
-       (circular-progress :value memory
-                 :class "sys_mem"
-                 :thickness 9
-             (label :text ""
-                 :class "sys_icon_mem"
-                 :limit-width 2
-                 :show_truncated false
-                 :wrap false
-                 :angle 0.0))
-       (box :orientation "v" :space-evenly "false" :spacing 0 :hexpand "false" :vexpand "false"
-        (label :text "memory"
-            :halign "start"
-            :class "sys_text_mem"
-            :limit-width 9
-            :show_truncated false
-            :wrap false)
-        (label :text "${memory_used_mb} | ${memory_total_mb}mb "
-            :halign "start"
-            :class "sys_text_mem_sub"
-            :limit-width 22
-            :show_truncated false
-            :wrap false)
-        (label :text "${memory_free_mb}mb free"
-            :halign "start"
-            :class "sys_text_mem_sub"
-            :limit-width 22
-            :show_truncated false
-            :wrap false)))))
+  (circular-progress :value "${EWW_CPU.avg}"
+    :class "cpu circBar"
+    :thickness 4 
+    :width 50
+    :height 50
+    (label :limit-width 2
+           :tooltip "using ${round(EWW_CPU.avg, 1)}% of the CPU)"
+           :xalign 0.43
+           :text "")))
 
