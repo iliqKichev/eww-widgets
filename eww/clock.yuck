@@ -1,6 +1,6 @@
 (defpoll clock_time :interval "30s" "date +\%H")
 (defpoll clock_minute :interval "5s" "date +\%M")
-(defpoll clock_date :interval "10h" "date '+%a, %e %b %Y'")
+(defpoll clock_date :interval "1h" "date '+%a, %e %b %Y'")
 
 (defvar time_rev false)
 
@@ -16,7 +16,8 @@
       :reveal time_rev
       :duration "250ms"
       (button :class "date"
-             :onclick "./scripts/pop calendar" clock_date)))))
+              :onclick "${EWW_CMD} open calendar --toggle" 
+              (label :text "${clock_date}"))))))
 
 (defwidget cal []
   (box :class "cal" :orientation "v"
@@ -24,3 +25,15 @@
     (calendar :class "cal" 
        :day calendar_day 
        :year calendar_year))))
+
+(defwindow calendar
+  :geometry (geometry :x "1%" 
+             :y "1%" 
+             :anchor "top right"
+             :width "270px" 
+             :height "60px")
+  :stacking "fg"
+  :exclusive false
+  :monitor 0
+ (cal))
+
