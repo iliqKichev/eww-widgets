@@ -9,30 +9,37 @@
 
 (defwidget powermenucontent []
   (box
-    :orientation "h"
-    :class "powermenu-box"
+    :class "powermenu"
       (button 
         :class "btn shutdown"
         :tooltip "Shutdown"
         :onclick "${EWW_CMD} close powermenu && shutdown now"
         (label 
           :text "" 
-          :xalign 0.45))
+          :xalign 0.45)
+      )
 
-      (button :class "btn reboot"
+      (button 
+        :class "btn reboot"
         :tooltip "Reboot"
         :onclick "${EWW_CMD} close powermenu && reboot"
-        (label 
-          :text ""
-          :xalign 0.45))
+         (label 
+           :text ""
+           :xalign 0.45)
+      )
 
-
-      (button :class "btn logout"
+      (button 
+        :class "btn logout"
         :tooltip "Logout"
         :onclick "${EWW_CMD} close powermenu && hyprctl dispatch exit"
         (label 
           :text "󰍃"
-          :xalign 0.5))))
+          :xalign 0.5)
+      )
+    )
+  )
+
+
 
 (defwindow powermenu
   :monitor 0
