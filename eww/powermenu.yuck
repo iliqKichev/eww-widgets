@@ -16,7 +16,7 @@
         :onclick "${EWW_CMD} close powermenu && shutdown now"
         (label 
           :text "" 
-          :xalign 0.45)
+          :xalign 0.4)
       )
 
       (button 
