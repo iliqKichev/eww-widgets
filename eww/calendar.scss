@@ -1,0 +1,33 @@
+// Calendar
+.cal {
+	background-color: $crust;
+	font-family: DaddyTime Nerd Font;
+	font-size: 1.1rem;
+	font-weight: bold;
+	border-radius: 10px;
+
+	.cal-in {
+		padding: 0px 0.7rem;
+		color: $text;
+
+		.cal {
+			&.highlight {
+				background: $surface0;
+				color: $text;
+			}
+
+			&.day-number {
+				padding: 0 0.6rem;
+			}
+
+			&:selected {
+				color: $base;
+				background: $text;
+			}
+
+		}
+
+	}
+
+
+}

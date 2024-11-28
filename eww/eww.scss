@@ -4,7 +4,7 @@ Edited by iliqKichev
 **/
 
 @import "./macchiato.scss";
-
+@import "./calendar.scss";
 
 * {
 	all: unset;
@@ -219,64 +219,6 @@ scale trough {
 	margin: 3px 0px 0px 5px;
 
 }
-
-// Calendar
-.cal {
-	background-color: $crust;
-	font-family: DaddyTime Nerd Font;
-	font-size: 1rem;
-	font-weight: normal;
-	border-radius: 10px;
-
-	.cal-in {
-		padding: 0px 0.7rem;
-		color: $text;
-
-		.cal {
-			padding: 5px;
-
-			&.highlight {
-				background: $surface1;
-				color: $text;
-			}
-
-		}
-
-	}
-
-	&:selected {
-		color: $base;
-		background: $text;
-	}
-}
-
-/**
-calendar {
-	color: #bfc9db;
-}
-
-calendar:selected {
-	color: #a1bdce;
-}
-
-calendar.header {
-	color: #a1bdce;
-	font-weight: bold;
-}
-
-calendar.button {
-	color: #afbea2;
-}
-
-calendar.highlight {
-	color: #a1bdce;
-	font-weight: bold;
-}
-
-calendar:indeterminate {
-	color: #bfc9db;
-}
-**/
 
 .music_pop {
 	background-color: #0f0f17;
